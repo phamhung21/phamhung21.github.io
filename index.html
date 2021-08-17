@@ -42,21 +42,36 @@
         audio {
             /* display: none */
         }
-        /* @media only screen and (max-width: 1024px) {
+        @media only screen and (max-width: 1024px) {
             [class*="col-"] {
                 width: 100%;
             }
-        }  */
+        } 
+        #cake {
+            width: inherit;
+            height: inherit;
+        }
+        .bd-cake {
+            max-width: 60%;
+            max-height: 300px;
+        }
     </style>
     
     <script type="text/javascript">
         $(document).ready(function(){
-            console.log(123);
-            console.log($("input"));
-            $('#play').trigger('click');
+            $('#music').on('click', function(){
+                $("#music").css('pointer-events','none');
+            });
         });
         function playAudio(url) {
-            new Audio(url).play();
+            var audio = new Audio(url);
+            audio.play();
+            $("#music").remove();
+            $("#cake").removeClass('d-none');
+            $("#cake-fadein").fadeIn("5000");
+            audio.onended = function() {
+                alert("The audio has ended");
+            };
         }
         
         
@@ -66,11 +81,6 @@
 <body>
     <header></header>
     <main>
-        <!-- <audio id="audio" controls autoplay="true">
-            <source id="audio1" src="audio/hpbd.mp3" type="audio/mpeg"> 
-        </audio> -->
-        
-        
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
@@ -81,9 +91,12 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center">
-            <button type="button" class="btn btn-primary btn-sm" id="play" onclick="playAudio('audio/hpbd.mp3')">Click me</button>
+            <button type="button" class="btn btn-primary btn-sm " id="music" onclick="playAudio('audio/hpbd_v3.mp3')">Click me</button>
+            <img id="cake" class="d-none bd-cake" src="image/bd-cake.gif" alt="Happy Birthday Huyen Socola" >
         </div>
-        
+        <div style="display:none;" class="row d-flex justify-content-center ">
+            
+        </div>
     </main>
     
     <footer>

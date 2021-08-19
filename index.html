@@ -17,95 +17,120 @@
     
     <style>
         /* body {
-            background: url(../image/shiba2.jpg) ;
-            background: url(images/bg.jpg) no-repeat center center fixed; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+            background-image: url("image/giphy.gif") ;
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+            backdrop-filter: blur(2px);
+            
         } */
-        /* img {
-            max-width: 100%;
-            max-height: 100%;
-        } */
-        .img-container {
-            text-align: center;
-        }
-        img{
-            width: inherit;
-        }
-        footer {
-            position: fixed;
-            bottom: 20px;
+        img {
             width: 100%;
+            height: 100vh;
         }
-        audio {
-            /* display: none */
+        #test {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            width: 100px;
+            height: 100px;
         }
-        @media only screen and (max-width: 1024px) {
-            [class*="col-"] {
-                width: 100%;
+        
+        #confetti{
+            width: 100px;
+            height: 100px;
+        }
+        @media only screen and (max-width: 480px){
+            h2{
+                font-size: 19px;
             }
-        } 
-        #cake {
-            width: inherit;
-            height: inherit;
+            .mt-3{
+                margin-top: 1.5rem!important;
+            }
         }
-        .bd-cake {
-            max-width: 60%;
-            max-height: 300px;
+        
+        /* loading animation  */
+        .lds-heart {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+            transform: rotate(45deg);
+            transform-origin: 40px 40px;
         }
+        .lds-heart div {
+            top: 32px;
+            left: 32px;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: rgb(192, 3, 3);
+            animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        .lds-heart div:after,
+        .lds-heart div:before {
+            content: " ";
+            position: absolute;
+            display: block;
+            width: 32px;
+            height: 32px;
+            background: rgb(192, 3, 3);
+        }
+        .lds-heart div:before {
+            left: -24px;
+            border-radius: 50% 0 0 50%;
+        }
+        .lds-heart div:after {
+            top: -24px;
+            border-radius: 50% 50% 0 0;
+        }
+        .text-loading {
+            
+        }
+        @keyframes lds-heart {
+            0% {
+                transform: scale(0.95);
+            }
+            5% {
+                transform: scale(1.1);
+            }
+            39% {
+                transform: scale(0.85);
+            }
+            45% {
+                transform: scale(1);
+            }
+            60% {
+                transform: scale(0.95);
+            }
+            100% {
+                transform: scale(0.9);
+            }
+        }
+        
     </style>
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#music').on('click', function(){
-                $("#music").css('pointer-events','none');
-            });
-        });
-        function playAudio(url) {
-            var audio = new Audio(url);
-            audio.play();
-            $("#music").remove();
-            $("#cake").removeClass('d-none');
-            $("#cake-fadein").fadeIn("5000");
-            audio.onended = function() {
-                alert("The audio has ended");
-            };
-        }
-        
-        
-    </script>
 </head>
 
 <body>
-    <header></header>
-    <main>
+    <div class="container">
+        <div class="text-center mt-3">
+            <h2>(☞ﾟヮﾟ)☞  WELCOME TO  ☜(ﾟヮﾟ☜)</h2>
+        </div>
+        
         <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <img src="image/bd-cake1.gif" alt="">
+            <div class=" col-sm-4 text d-flex justify-content-right mt-3" style="float: right">
+                <img id="confetti" src="image/confetti-45.gif" alt="">
             </div>
-            <div class="col-sm-3">
-                
+            <div class="col-sm-4 text mt-3">
+                <h4>HUYEN SOCOLA'S BIRTHDAY PARTY</h4>
+            </div>
+            <div class=" col-sm-4 text d-flex mt-3" >
+                <img id="confetti" src="image/confetti-45.gif" alt="">
             </div>
         </div>
-        <div class="row d-flex justify-content-center">
-            <button type="button" class="btn btn-primary btn-sm " id="music" onclick="playAudio('audio/hpbd_v3.mp3')">Click me</button>
-            <img id="cake" class="d-none bd-cake" src="image/bd-cake.gif" alt="Happy Birthday Huyen Socola" >
-        </div>
-        <div style="display:none;" class="row d-flex justify-content-center ">
-            
-        </div>
-    </main>
-    
-    <footer>
-        <div class="d-flex justify-content-center">
-            <img src="image/dog-run.gif" alt="">
-            <img src="image/dog-run.gif" alt="">
-            <img src="image/dog-run.gif" alt="">
-        </div>
-    </footer>
-    
+
+        <a href="first_page.html" class="btn btn-primary">Open Party</a>
+    </div>
 </body>
 </html>

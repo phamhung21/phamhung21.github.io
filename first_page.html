@@ -8,183 +8,16 @@
     
     <!-- css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/first_page.css">
     
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/common.js"></script>
     
-    <style>
-        body{
-            background-color: khaki;
-        }
-        /* body {
-            background: url(../image/shiba2.jpg) ;
-            background: url(images/bg.jpg) no-repeat center center fixed; 
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        } */
-        /* img {
-            max-width: 100%;
-            max-height: 100%;
-        } */
-        .img-container {
-            text-align: center;
-        }
-        img{
-            width: inherit;
-        }
-        footer {
-            position: fixed;
-            bottom: 20px;
-            width: 100%;
-        }
-        audio {
-            /* display: none */
-        }
-        @media only screen and (max-width: 1024px) {
-            [class*="col-"] {
-                width: 100%;
-            }
-        } 
-        #cake {
-            width: inherit;
-            height: inherit;
-        }
-        .bd-cake {
-            max-width: 60%;
-            max-height: 300px;
-        }
-        
-        .center {
-            margin: auto;
-            width: 50%;
-            border: 3px solid green;
-            padding: 10px;
-        }
-        
-        /* loading animation  */
-        .lds-heart {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
-            transform: rotate(45deg);
-            transform-origin: 40px 40px;
-        }
-        .lds-heart div {
-            top: 32px;
-            left: 32px;
-            position: absolute;
-            width: 32px;
-            height: 32px;
-            background: rgb(192, 3, 3);
-            animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-        }
-        .lds-heart div:after,
-        .lds-heart div:before {
-            content: " ";
-            position: absolute;
-            display: block;
-            width: 32px;
-            height: 32px;
-            background: rgb(192, 3, 3);
-        }
-        .lds-heart div:before {
-            left: -24px;
-            border-radius: 50% 0 0 50%;
-        }
-        .lds-heart div:after {
-            top: -24px;
-            border-radius: 50% 50% 0 0;
-        }
-        
-        @keyframes lds-heart {
-            0% {
-                transform: scale(0.95);
-            }
-            5% {
-                transform: scale(1.1);
-            }
-            39% {
-                transform: scale(0.85);
-            }
-            45% {
-                transform: scale(1);
-            }
-            60% {
-                transform: scale(0.95);
-            }
-            100% {
-                transform: scale(0.9);
-            }
-        }
-        
-        /* fade in image */
-        #cake {
-            animation: fadeIn ease 10s;
-            -webkit-animation: fadeIn ease 10s;
-            -moz-animation: fadeIn ease 10s;
-            -o-animation: fadeIn ease 10s;
-            -ms-animation: fadeIn ease 10s;
-        }
-        @keyframes fadeIn {
-            0% {opacity:0;}
-            100% {opacity:1;}
-        }
-        
-        @-moz-keyframes fadeIn {
-            0% {opacity:0;}
-            100% {opacity:1;}
-        }
-        
-        @-webkit-keyframes fadeIn {
-            0% {opacity:0;}
-            100% {opacity:1;}
-        }
-        
-        @-o-keyframes fadeIn {
-            0% {opacity:0;}
-            100% {opacity:1;}
-        }
-        
-        @-ms-keyframes fadeIn {
-            0% {opacity:0;}
-            100% {opacity:1;}
-        }
-    </style>
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#music').on('click', function(){
-                $("#music").css('pointer-events','none');
-                $('.button-start').remove();
-            });
-        });
-        function playAudio(url) {
-            
-            var audio = new Audio(url);
-            $('.loading-status').removeClass('d-none');
-            $("#music").remove();
-            setTimeout(function(){
-                console.log(1);
-                $('.loading-status').fadeOut();
-                console.log(2);
-                audio.play();
-                // $('.loading-status').attr("hidden");
-                $("#cake").removeClass('d-none');
-                $("#cake-fadein").fadeIn("5000");
-            }, 3000);
-            audio.onended = function() {
-                alert("The audio has ended");
-            };
-            
-        }
-        
-    </script>
+
 </head>
 
 <body>
@@ -199,7 +32,7 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center button-start">
-            <button type="button" class="btn btn-primary btn-sm " id="music" onclick="playAudio('audio/hpbd_v3.mp3')">Click me</button>
+            <button type="button" class="btn btn-primary btn-sm no-popup " id="music" onclick="playAudio('audio/test.mp3')">Click me</button>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="loading-status ml-4 d-none">
@@ -210,18 +43,45 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center">
-            <img id="cake" class=" d-none bd-cake" src="image/bd-cake.gif" alt="Happy Birthday Huyen Socola" >
+            <img id="cake" class=" d-none bd-cake" src="image/bd-cake_final.gif" alt="Happy Birthday Huyen Socola" >
         </div>
         <div style="display:none;" class="row d-flex justify-content-center  mb-5">
             
         </div>
         <div class="row d-flex justify-content-center mt-5">
-            <img src="image/dog-run.gif" alt="" style="width:inherit; height:inherit">
-            <!-- <img src="image/dog-run.gif" alt="">
-                <img src="image/dog-run.gif" alt=""> -->
+            <img src="image/dog-run.gif" alt="" class="">
+            <!-- <img src="image/dog-run.gif" alt="" class="">
+            <img src="image/dog-run.gif" alt="" class=""> -->
+        </div>
+        
+        <!-- modal to show text  -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary popup" data-toggle="modal" data-target="#exampleModalCenter">
+            <!-- Launch demo modal -->
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
+</div>
+
 </body>
 </html>

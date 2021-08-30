@@ -8,6 +8,7 @@
     
     <!-- css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
     
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -15,101 +16,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <style>
-        /* body {
-            background-image: url("image/giphy.gif") ;
-            background-repeat: no-repeat;
-            background-size: 100% 100vh;
-            backdrop-filter: blur(2px);
-            
-        } */
-        img {
-            width: 100%;
-            height: 100vh;
-        }
-        #test {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -50px;
-            margin-left: -50px;
-            width: 100px;
-            height: 100px;
-        }
-        
-        #confetti{
-            width: 100px;
-            height: 100px;
-        }
-        @media only screen and (max-width: 480px){
-            h2{
-                font-size: 19px;
-            }
-            .mt-3{
-                margin-top: 1.5rem!important;
-            }
-        }
-        
-        /* loading animation  */
-        .lds-heart {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
-            transform: rotate(45deg);
-            transform-origin: 40px 40px;
-        }
-        .lds-heart div {
-            top: 32px;
-            left: 32px;
-            position: absolute;
-            width: 32px;
-            height: 32px;
-            background: rgb(192, 3, 3);
-            animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-        }
-        .lds-heart div:after,
-        .lds-heart div:before {
-            content: " ";
-            position: absolute;
-            display: block;
-            width: 32px;
-            height: 32px;
-            background: rgb(192, 3, 3);
-        }
-        .lds-heart div:before {
-            left: -24px;
-            border-radius: 50% 0 0 50%;
-        }
-        .lds-heart div:after {
-            top: -24px;
-            border-radius: 50% 50% 0 0;
-        }
-        .text-loading {
-            
-        }
-        @keyframes lds-heart {
-            0% {
-                transform: scale(0.95);
-            }
-            5% {
-                transform: scale(1.1);
-            }
-            39% {
-                transform: scale(0.85);
-            }
-            45% {
-                transform: scale(1);
-            }
-            60% {
-                transform: scale(0.95);
-            }
-            100% {
-                transform: scale(0.9);
-            }
-        }
-        
-    </style>
 </head>
 
 <body>
@@ -118,18 +24,18 @@
             <h2>(☞ﾟヮﾟ)☞  WELCOME TO  ☜(ﾟヮﾟ☜)</h2>
         </div>
         
-        <div class="row">
-            <div class=" col-sm-4 text d-flex justify-content-right mt-3" style="float: right">
-                <img id="confetti" src="image/confetti-45.gif" alt="">
+        <div class="row d-flex justify-content-center">
+            <div class=" col-sm-2 text d-flex mt-3" >
             </div>
-            <div class="col-sm-4 text mt-3">
-                <h4>HUYEN SOCOLA'S BIRTHDAY PARTY</h4>
+            <div class="col-sm-8 mt-3 d-flex justify-content-center">
+                <img class="d-flex justify-content-end" id="confetti" src="image/confetti-45.gif" alt="">
+                <h4 class="align-self-center">HUYEN SOCOLA'S BIRTHDAY PARTY</h4> 
+                <img class="d-flex justify-content-start" id="confetti" src="image/confetti-45.gif" alt="">
             </div>
-            <div class=" col-sm-4 text d-flex mt-3" >
-                <img id="confetti" src="image/confetti-45.gif" alt="">
+            <div class=" col-sm-2 text d-flex mt-3" >
             </div>
         </div>
-
+        
         <a href="first_page.html" class="btn btn-primary">Open Party</a>
     </div>
 </body>
